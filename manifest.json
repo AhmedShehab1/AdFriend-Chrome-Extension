@@ -1,0 +1,13 @@
+{
+    "name": "AdFriend Extension",
+    "description": "Chrome extension that intercepts and replaces ad elements on web pages with customizable, positive content widgets.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "popup/AdFriend.html",
+      "default_icon": "images/AdFriend.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}
