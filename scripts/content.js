@@ -44,7 +44,7 @@
     };
 
     const scanAndReplaceAds = () => {
-        const ads = document.querySelectorAll('[style*="display:block"], iframe, .ad-container');
+        const ads = document.querySelectorAll('[style*="display:block"]');
         ads.forEach(replaceAdWithContent);
     };
 
