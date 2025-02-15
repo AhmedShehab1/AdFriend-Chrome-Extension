@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@eyeo/snippets": "^1.7.1",
+    "@eyeo/webext-ad-filtering-solution": "^1.23.1",
+    "chrome-types": "^0.1.336"
+  },
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

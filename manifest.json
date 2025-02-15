@@ -5,9 +5,61 @@
     "manifest_version": 3,
     "action": {
       "default_popup": "popup/AdFriend.html",
-      "default_icon": "images/AdFriend.png"
+      "default_icon": "images/AdFriend.png",
+      "default_title": "Click Me"
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "dist/background.js"
+    },
+    "permissions": [
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequest",
+    "scripting",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "unlimitedStorage"
+  ],
+  "content_scripts": [
+      {
+        "all_frames": true,
+        "match_about_blank": true,
+        "run_at": "document_start",
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ],
+        "js": [
+          "scripts/content.js"
+        ]
+      }
+    ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/AdFriend.png",
+        "scripts/content.js",
+        "styles/content.css"
+      ],
+      "matches": ["<all_urls>"]
     }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+    {
+      "id": "8C13E995-8F06-4927-BEA7-6C845FB7EEBF",
+      "enabled": true,
+      "path": "scriptsOutput/rulesets/8C13E995-8F06-4927-BEA7-6C845FB7EEBF"
+    },
+    {
+      "id": "D72B6F06-52B2-4FED-96A2-1BF59CDD7AEC",
+      "enabled": true,
+      "path": "scriptsOutput/rulesets/D72B6F06-52B2-4FED-96A2-1BF59CDD7AEC"
+    }
+  ]
+  }
 }
